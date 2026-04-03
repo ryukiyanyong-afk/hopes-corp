@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>料金プラン | HOPES</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f8fafc;
+      color: #111827;
+      margin: 0;
+      line-height: 1.8;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    .hero {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 40px;
+    }
+    .hero h1 {
+      font-size: 40px;
+      line-height: 1.3;
+      margin: 0 0 16px;
+    }
+    .hero p {
+      color: #4b5563;
+      font-size: 17px;
+    }
+    .notice {
+      background: #111827;
+      color: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .notice p {
+      color: #d1d5db;
+      margin: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .card.recommend {
+      border: 2px solid #111827;
+    }
+    .plan {
+      font-size: 14px;
+      color: #6b7280;
+      font-weight: 700;
+    }
+    .price {
+      font-size: 30px;
+      font-weight: 800;
+      margin: 10px 0 4px;
+    }
+    .sub {
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+    .tag {
+      display: inline-block;
+      background: #111827;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 10px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+    }
+    .box {
+      margin-top: 20px;
+      padding: 14px;
+      border-radius: 12px;
+      background: #f3f4f6;
+      color: #374151;
+      font-size: 14px;
+    }
+    .box.blue {
+      background: #eef2ff;
+      color: #3730a3;
+      font-weight: 700;
+    }
+    .notes {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 32px;
+    }
+    .cta {
+      background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 32px;
+    }
+    .btn {
+      display: inline-block;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      margin-top: 16px;
+    }
+    .top-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      text-decoration: none;
+      color: #374151;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="top-link" href="/index.html">← トップへ戻る</a>
+
+    <section class="hero">
+      <h1>電話の取りこぼしを減らし、<br>営業時間外や不在時の受付を整えます</h1>
+      <p>
+        HOPESでは、AI電話受付を単なる自動応答ではなく、
+        実運用を前提とした導入支援付きでご提供しています。
+        初月は無料でお試しいただけます。
+      </p>
+    </section>
+
+    <section class="notice">
+      <h2>料金について</h2>
+      <p>
+        初月は無料でお試しいただけます。<br>
+        継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。<br>
+        各プランとも、実際の運用を前提とした導入支援付きです。
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div class="plan">標準導入プラン</div>
+        <div class="price">月額 9,800円</div>
+        <div class="sub">導入サポート費 29,800円</div>
+        <div>・1ユーザー利用</div>
+        <div>・標準的な受付導入設定</div>
+        <div>・基本文言の初期設定</div>
+        <div>・通知先の初期設定</div>
+        <div>・管理画面の利用開始サポート</div>
+        <div class="box">
+          初月無料<br>
+          継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。
+        </div>
+      </div>
+
+      <div class="card recommend">
+        <div class="tag">おすすめ</div>
+        <div class="plan">運用支援プラン</div>
+        <div class="price">月額 19,800円</div>
+        <div class="sub">導入サポート費 59,800円</div>
+        <div>・3ユーザー利用</div>
+        <div>・標準導入設定</div>
+        <div>・受付文言の調整</div>
+        <div>・通知先設定の最適化</div>
+        <div>・運用開始時の支援</div>
+        <div>・初期の利用状況に応じた見直し対応</div>
+        <div class="box blue">
+          初月無料<br>
+          継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="plan">専用対応プラン</div>
+        <div class="price">月額 39,800円</div>
+        <div class="sub">導入サポート費 119,800円</div>
+        <div>・10ユーザー利用</div>
+        <div>・導入設計の個別調整</div>
+        <div>・受付内容の個別最適化</div>
+        <div>・通知フローの個別設計</div>
+        <div>・優先対応</div>
+        <div>・継続運用を前提とした調整支援</div>
+        <div class="box">
+          初月無料<br>
+          継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。
+        </div>
+      </div>
+    </section>
+
+    <section class="notes">
+      <h2>ご案内事項</h2>
+      <div>※初月無料期間中は標準導入範囲でのご提供となります。</div>
+      <div>※特別なカスタマイズや個別開発が必要な場合は、別途お見積りとなります。</div>
+      <div>※継続利用の有無は無料期間終了前にご確認いたします。</div>
+    </section>
+
+    <section class="cta">
+      <h2>まずは実際の運用に近い形でお試しください</h2>
+      <p>
+        導入前に、実際の受電運用に近い形でご確認いただけます。<br>
+        ご相談内容に応じて、最適な導入方法をご案内します。
+      </p>
+      <a class="btn" href="mailto:support@linolife.store">無料で相談する</a>
+    </section>
+  </div>
+</body>
+</html>
