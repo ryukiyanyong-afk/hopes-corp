@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-  
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,46 +7,154 @@
   <style>
     body {
       font-family: sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 0;
+      background: #f8fafc;
+      color: #111827;
       line-height: 1.8;
-      color: #111;
-      background: #fff;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 56px 20px 80px;
+    }
+    .hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 56px 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .badge {
+      display: inline-block;
+      background: #eef2ff;
+      color: #3730a3;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
     }
     h1 {
-      font-size: 36px;
-      margin-bottom: 12px;
+      font-size: 44px;
+      line-height: 1.25;
+      margin: 0 0 16px;
     }
-    h2 {
-      margin-top: 32px;
-      font-size: 24px;
+    .lead {
+      font-size: 18px;
+      color: #4b5563;
+      max-width: 760px;
+      margin: 0;
     }
-    .btn {
+    .button-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .btn-primary {
       display: inline-block;
-      margin-top: 24px;
       background: #111827;
       color: #fff;
       text-decoration: none;
-      padding: 14px 20px;
+      padding: 14px 22px;
       border-radius: 12px;
       font-weight: 700;
+    }
+    .btn-secondary {
+      display: inline-block;
+      background: #fff;
+      color: #111827;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid #d1d5db;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+    .section {
+      margin-top: 32px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    }
+    .section h2 {
+      margin-top: 0;
+      font-size: 26px;
+    }
+    .muted {
+      color: #4b5563;
+    }
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 34px;
+      }
+      .hero {
+        padding: 40px 22px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>HOPES</h1>
-  <p>HOPESの公式ページです。</p>
+  <div class="wrap">
+    <section class="hero">
+      <div class="badge">HOPES</div>
+      <h1>営業時間外・不在時の電話受付を<br>AIで整えます</h1>
+      <p class="lead">
+        電話の取りこぼしを減らし、受付内容の記録と通知まで対応します。
+        HOPESでは、AI電話受付を単なる自動応答ではなく、実運用を前提とした導入支援付きでご提供しています。
+      </p>
 
-  <h2>概要</h2>
-  <p><strong>名称：</strong>HOPES</p>
-  <p><strong>代表者：</strong>岩永竜生</p>
-  <p><strong>所在地：</strong>福岡県北九州市</p>
-  <p><strong>事業内容：</strong>AI電話受付システム及び自動応答システムの企画、開発、販売、運営及び保守</p>
+      <div class="button-row">
+        <a class="btn-primary" href="/pricing.html">料金を見る</a>
+        <a class="btn-secondary" href="mailto:support@linolife.store">無料で相談する</a>
+      </div>
 
-  <h2>電子公告</h2>
-  <p>本ページに公告を掲載します。</p>
+      <div class="grid">
+        <div class="card">
+          <h3>営業時間外の受付</h3>
+          <div class="muted">夜間や休日の電話取りこぼしを減らします。</div>
+        </div>
+        <div class="card">
+          <h3>受付内容を記録</h3>
+          <div class="muted">誰から何の用件だったかを整理して確認できます。</div>
+        </div>
+        <div class="card">
+          <h3>導入支援付き</h3>
+          <div class="muted">単なるツール提供ではなく、導入時の設定まで支援します。</div>
+        </div>
+      </div>
+    </section>
 
-  <a class="btn" href="/pricing.html">料金を見る</a>
+    <section class="section">
+      <h2>概要</h2>
+      <p><strong>名称：</strong>HOPES</p>
+      <p><strong>代表者：</strong>岩永竜生</p>
+      <p><strong>所在地：</strong>福岡県北九州市</p>
+      <p><strong>事業内容：</strong>AI電話受付システム及び自動応答システムの企画、開発、販売、運営及び保守</p>
+    </section>
+
+    <section class="section">
+      <h2>電子公告</h2>
+      <p class="muted">本ページに公告を掲載します。</p>
+    </section>
+  </div>
 </body>
 </html>
