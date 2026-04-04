@@ -54,6 +54,8 @@
       border-radius: 16px;
       padding: 24px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
     }
     .card.recommend {
       border: 2px solid #111827;
@@ -81,6 +83,11 @@
       padding: 6px 10px;
       border-radius: 999px;
       margin-bottom: 12px;
+      width: fit-content;
+    }
+    .feature {
+      margin: 6px 0;
+      color: #374151;
     }
     .box {
       margin-top: 20px;
@@ -94,6 +101,17 @@
       background: #eef2ff;
       color: #3730a3;
       font-weight: 700;
+    }
+    .card-btn {
+      display: inline-block;
+      background: #111827;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 700;
+      margin-top: 18px;
+      text-align: center;
     }
     .notes {
       background: #fff;
@@ -156,15 +174,26 @@
         <div class="plan">標準導入プラン</div>
         <div class="price">月額 9,800円</div>
         <div class="sub">導入サポート費 29,800円</div>
-        <div>・1ユーザー利用</div>
-        <div>・標準的な受付導入設定</div>
-        <div>・基本文言の初期設定</div>
-        <div>・通知先の初期設定</div>
-        <div>・管理画面の利用開始サポート</div>
+
+        <div class="feature">・1ユーザー利用</div>
+        <div class="feature">・標準的な受付導入設定</div>
+        <div class="feature">・基本文言の初期設定</div>
+        <div class="feature">・通知先の初期設定</div>
+        <div class="feature">・管理画面の利用開始サポート</div>
+
         <div class="box">
           初月無料<br>
           継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。
         </div>
+
+        <a
+          class="card-btn"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          このプランで相談する
+        </a>
       </div>
 
       <div class="card recommend">
@@ -172,32 +201,54 @@
         <div class="plan">運用支援プラン</div>
         <div class="price">月額 19,800円</div>
         <div class="sub">導入サポート費 59,800円</div>
-        <div>・3ユーザー利用</div>
-        <div>・標準導入設定</div>
-        <div>・受付文言の調整</div>
-        <div>・通知先設定の最適化</div>
-        <div>・運用開始時の支援</div>
-        <div>・初期の利用状況に応じた見直し対応</div>
+
+        <div class="feature">・3ユーザー利用</div>
+        <div class="feature">・標準導入設定</div>
+        <div class="feature">・受付文言の調整</div>
+        <div class="feature">・通知先設定の最適化</div>
+        <div class="feature">・運用開始時の支援</div>
+        <div class="feature">・初期の利用状況に応じた見直し対応</div>
+
         <div class="box blue">
           初月無料<br>
           継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。
         </div>
+
+        <a
+          class="card-btn"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          このプランで相談する
+        </a>
       </div>
 
       <div class="card">
         <div class="plan">専用対応プラン</div>
         <div class="price">月額 39,800円</div>
         <div class="sub">導入サポート費 119,800円</div>
-        <div>・10ユーザー利用</div>
-        <div>・導入設計の個別調整</div>
-        <div>・受付内容の個別最適化</div>
-        <div>・通知フローの個別設計</div>
-        <div>・優先対応</div>
-        <div>・継続運用を前提とした調整支援</div>
+
+        <div class="feature">・10ユーザー利用</div>
+        <div class="feature">・導入設計の個別調整</div>
+        <div class="feature">・受付内容の個別最適化</div>
+        <div class="feature">・通知フローの個別設計</div>
+        <div class="feature">・優先対応</div>
+        <div class="feature">・継続運用を前提とした調整支援</div>
+
         <div class="box">
           初月無料<br>
           継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。
         </div>
+
+        <a
+          class="card-btn"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          このプランで相談する
+        </a>
       </div>
     </section>
 
@@ -214,7 +265,14 @@
         導入前に、実際の受電運用に近い形でご確認いただけます。<br>
         ご相談内容に応じて、最適な導入方法をご案内します。
       </p>
-      <a class="btn" href="mailto:support@linolife.store">無料で相談する</a>
+      <a
+        class="btn"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        無料で相談する
+      </a>
     </section>
   </div>
 </body>
