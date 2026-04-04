@@ -47,7 +47,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
-      align-items: start;
     }
     .card {
       background: #fff;
@@ -55,8 +54,14 @@
       border-radius: 16px;
       padding: 24px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      cursor: pointer;
+      transition: 0.2s ease;
     }
-    .card.recommend {
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .card.active {
       border: 2px solid #111827;
     }
     .plan {
@@ -71,7 +76,7 @@
     }
     .sub {
       color: #6b7280;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
     .tag {
       display: inline-block;
@@ -83,33 +88,18 @@
       border-radius: 999px;
       margin-bottom: 12px;
     }
-    .features {
-      margin: 16px 0 20px;
-      padding-left: 18px;
-      color: #374151;
-    }
-    .features li {
-      margin-bottom: 8px;
-    }
-    .card-btn {
-      display: block;
-      text-align: center;
-      background: #111827;
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      margin-top: 6px;
-    }
-    .mini-note {
-      margin-top: 14px;
-      padding: 12px 14px;
+    .box {
+      margin-top: 20px;
+      padding: 14px;
       border-radius: 12px;
       background: #f3f4f6;
-      color: #4b5563;
-      font-size: 13px;
-      line-height: 1.7;
+      color: #374151;
+      font-size: 14px;
+    }
+    .box.blue {
+      background: #eef2ff;
+      color: #3730a3;
+      font-weight: 700;
     }
     .notes {
       background: #fff;
@@ -143,6 +133,12 @@
       color: #374151;
       font-weight: 700;
     }
+    .selected-label {
+      display: inline-block;
+      margin-top: 12px;
+      color: #4b5563;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -168,57 +164,51 @@
     </section>
 
     <section class="grid">
-      <div class="card">
+      <div class="card" data-plan="標準導入プラン">
         <div class="plan">標準導入プラン</div>
         <div class="price">月額 9,800円</div>
         <div class="sub">導入サポート費 29,800円</div>
-        <ul class="features">
-          <li>1ユーザー利用</li>
-          <li>標準的な受付導入設定</li>
-          <li>基本文言の初期設定</li>
-          <li>通知先の初期設定</li>
-          <li>管理画面の利用開始サポート</li>
-        </ul>
-        <a class="card-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">このプランで相談する</a>
-        <div class="mini-note">
-          初月無料。継続をご希望の場合のみ、2か月目から導入サポート費と月額利用料が発生します。
+        <div>・1ユーザー利用</div>
+        <div>・標準的な受付導入設定</div>
+        <div>・基本文言の初期設定</div>
+        <div>・通知先の初期設定</div>
+        <div>・管理画面の利用開始サポート</div>
+        <div class="box">
+          初月無料<br>
+          継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。
         </div>
       </div>
 
-      <div class="card recommend">
+      <div class="card active" data-plan="運用支援プラン">
         <div class="tag">おすすめ</div>
         <div class="plan">運用支援プラン</div>
         <div class="price">月額 19,800円</div>
         <div class="sub">導入サポート費 59,800円</div>
-        <ul class="features">
-          <li>3ユーザー利用</li>
-          <li>標準導入設定</li>
-          <li>受付文言の調整</li>
-          <li>通知先設定の最適化</li>
-          <li>運用開始時の支援</li>
-          <li>初期の利用状況に応じた見直し対応</li>
-        </ul>
-        <a class="card-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">このプランで相談する</a>
-        <div class="mini-note">
-          初月無料。継続をご希望の場合のみ、2か月目から導入サポート費と月額利用料が発生します。
+        <div>・3ユーザー利用</div>
+        <div>・標準導入設定</div>
+        <div>・受付文言の調整</div>
+        <div>・通知先設定の最適化</div>
+        <div>・運用開始時の支援</div>
+        <div>・初期の利用状況に応じた見直し対応</div>
+        <div class="box blue">
+          初月無料<br>
+          継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" data-plan="専用対応プラン">
         <div class="plan">専用対応プラン</div>
         <div class="price">月額 39,800円</div>
         <div class="sub">導入サポート費 119,800円</div>
-        <ul class="features">
-          <li>10ユーザー利用</li>
-          <li>導入設計の個別調整</li>
-          <li>受付内容の個別最適化</li>
-          <li>通知フローの個別設計</li>
-          <li>優先対応</li>
-          <li>継続運用を前提とした調整支援</li>
-        </ul>
-        <a class="card-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">このプランで相談する</a>
-        <div class="mini-note">
-          初月無料。継続をご希望の場合のみ、2か月目から導入サポート費と月額利用料が発生します。
+        <div>・10ユーザー利用</div>
+        <div>・導入設計の個別調整</div>
+        <div>・受付内容の個別最適化</div>
+        <div>・通知フローの個別設計</div>
+        <div>・優先対応</div>
+        <div>・継続運用を前提とした調整支援</div>
+        <div class="box">
+          初月無料<br>
+          継続利用をご希望の場合のみ、2か月目から導入サポート費および月額利用料が発生します。
         </div>
       </div>
     </section>
@@ -236,8 +226,31 @@
         導入前に、実際の受電運用に近い形でご確認いただけます。<br>
         ご相談内容に応じて、最適な導入方法をご案内します。
       </p>
-      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">無料で相談する</a>
+      <a
+        id="consultBtn"
+        class="btn"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        選択中のプランで相談する
+      </a>
+      <div id="selectedPlanLabel" class="selected-label">選択中：運用支援プラン</div>
     </section>
   </div>
+
+  <script>
+    const cards = document.querySelectorAll(".card");
+    const selectedPlanLabel = document.getElementById("selectedPlanLabel");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        cards.forEach((c) => c.classList.remove("active"));
+        card.classList.add("active");
+        const plan = card.getAttribute("data-plan");
+        selectedPlanLabel.textContent = "選択中：" + plan;
+      });
+    });
+  </script>
 </body>
 </html>
