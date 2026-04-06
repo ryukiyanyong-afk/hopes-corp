@@ -3,8 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HOPES</title>
+  <title>HOPES | 中小企業向けAI電話受付サービス</title>
+  <meta
+    name="description"
+    content="営業時間外・不在時・接客中・作業中の電話を取りこぼさない。HOPESは、中小企業向けのAI電話受付サービスです。受付内容を自動で記録し、あとで確実に対応しやすくします。"
+  />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: sans-serif;
       margin: 0;
@@ -12,18 +24,30 @@
       color: #111827;
       line-height: 1.8;
     }
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 56px 20px 80px;
+
+    img {
+      max-width: 100%;
+      display: block;
     }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 32px 20px 88px;
+    }
+
     .hero {
       background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
       border: 1px solid #e5e7eb;
-      border-radius: 20px;
+      border-radius: 24px;
       padding: 56px 32px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
+
     .badge {
       display: inline-block;
       background: #eef2ff;
@@ -34,48 +58,124 @@
       border-radius: 999px;
       margin-bottom: 16px;
     }
-    h1 {
-      font-size: 44px;
-      line-height: 1.25;
-      margin: 0 0 16px;
+
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 700;
+      color: #374151;
+      margin-bottom: 14px;
     }
+
+    h1 {
+      font-size: 46px;
+      line-height: 1.22;
+      margin: 0 0 18px;
+      letter-spacing: -0.02em;
+    }
+
     .lead {
       font-size: 18px;
       color: #4b5563;
-      max-width: 760px;
+      max-width: 840px;
       margin: 0;
     }
+
+    .hero-note {
+      margin-top: 18px;
+      color: #374151;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
     .button-row {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       margin-top: 28px;
     }
-    .btn-primary {
-      display: inline-block;
-      background: #111827;
-      color: #fff;
-      text-decoration: none;
-      padding: 14px 22px;
-      border-radius: 12px;
-      font-weight: 700;
-    }
+
+    .btn-primary,
     .btn-secondary {
       display: inline-block;
-      background: #fff;
-      color: #111827;
       text-decoration: none;
       padding: 14px 22px;
       border-radius: 12px;
       font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #111827;
+      color: #fff;
+      border: 1px solid #111827;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: #111827;
       border: 1px solid #d1d5db;
     }
+
+    .btn-secondary:hover {
+      background: #f9fafb;
+      transform: translateY(-1px);
+    }
+
+    .mini-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .mini-point {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      color: #374151;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .section {
+      margin-top: 28px;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 20px;
+      padding: 32px 28px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.03);
+    }
+
+    .section h2 {
+      margin: 0 0 14px;
+      font-size: 30px;
+      line-height: 1.35;
+      letter-spacing: -0.02em;
+    }
+
+    .section-lead {
+      color: #4b5563;
+      margin: 0 0 22px;
+      font-size: 16px;
+    }
+
+    .muted {
+      color: #4b5563;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
-      margin-top: 24px;
+      margin-top: 20px;
     }
+
     .card {
       background: #fff;
       border: 1px solid #e5e7eb;
@@ -83,31 +183,261 @@
       padding: 20px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.03);
     }
+
     .card h3 {
       margin: 0 0 10px;
       font-size: 18px;
+      line-height: 1.5;
     }
-    .section {
-      margin-top: 32px;
-      background: #fff;
+
+    .pain-list,
+    .feature-list,
+    .faq-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .pain-item,
+    .feature-item,
+    .faq-item {
       border: 1px solid #e5e7eb;
+      background: #f9fafb;
+      border-radius: 14px;
+      padding: 16px 18px;
+    }
+
+    .pain-item strong,
+    .feature-item strong,
+    .faq-item strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 16px;
+      color: #111827;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .step {
+      border: 1px solid #e5e7eb;
+      background: #f9fafb;
       border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      padding: 18px;
     }
-    .section h2 {
-      margin-top: 0;
-      font-size: 26px;
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: #111827;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 12px;
     }
-    .muted {
+
+    .step h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .step p {
+      margin: 0;
+      color: #4b5563;
+      font-size: 15px;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .compare-box {
+      border-radius: 18px;
+      padding: 22px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .compare-box.before {
+      background: #fff7ed;
+      border-color: #fed7aa;
+    }
+
+    .compare-box.after {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+    }
+
+    .compare-box h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .compare-box ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #374151;
+    }
+
+    .dashboard-box {
+      background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+      color: #fff;
+      border-radius: 18px;
+      padding: 24px;
+      margin-top: 8px;
+    }
+
+    .dashboard-box h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+    }
+
+    .dashboard-points {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .dashboard-point {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 14px;
+    }
+
+    .dashboard-point strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .usecase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .usecase-item {
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 16px;
+      background: #f9fafb;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .pricing-box {
+      background: linear-gradient(180deg, #ffffff 0%, #f9fafb 100%);
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .pricing-box h3 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.4;
+    }
+
+    .pricing-box p {
+      margin: 0;
       color: #4b5563;
     }
-    @media (max-width: 640px) {
+
+    .cta {
+      margin-top: 28px;
+      background: linear-gradient(180deg, #111827 0%, #1f2937 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 40px 28px;
+      box-shadow: 0 10px 30px rgba(17, 24, 39, 0.18);
+    }
+
+    .cta h2 {
+      margin: 0 0 14px;
+      font-size: 34px;
+      line-height: 1.35;
+    }
+
+    .cta p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.86);
+      font-size: 16px;
+    }
+
+    .cta .button-row {
+      margin-top: 24px;
+    }
+
+    .cta .btn-primary {
+      background: #fff;
+      color: #111827;
+      border-color: #fff;
+    }
+
+    .cta .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.28);
+    }
+
+    .company-info p {
+      margin: 0 0 10px;
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+      padding-bottom: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .wrap {
+        padding: 20px 16px 72px;
+      }
+
+      .hero,
+      .section,
+      .cta {
+        padding: 26px 18px;
+      }
+
       h1 {
         font-size: 34px;
+        line-height: 1.3;
       }
-      .hero {
-        padding: 40px 22px;
+
+      .section h2,
+      .cta h2 {
+        font-size: 26px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
@@ -116,45 +446,261 @@
   <div class="wrap">
     <section class="hero">
       <div class="badge">HOPES</div>
-      <h1>営業時間外・不在時の電話受付を<br>AIで整えます</h1>
+      <div class="eyebrow">業種を問わず、電話を取りこぼしたくない中小企業向け</div>
+      <h1>
+        営業時間外・不在時・接客中の電話を取りこぼさない。<br>
+        AIが代わりに受付し、あとで確実に対応しやすくします
+      </h1>
       <p class="lead">
-        電話の取りこぼしを減らし、受付内容の記録と通知まで対応します。
-        HOPESでは、AI電話受付を単なる自動応答ではなく、実運用を前提とした導入支援付きでご提供しています。
+        HOPESは、電話に出られない時間帯にAIが一次受付を行い、
+        氏名・電話番号・会社名・用件・折り返し希望などを整理して記録する
+        中小企業向けのAI電話受付サービスです。
+        業種を問わず、電話対応の負担と取りこぼしを減らし、あとで対応しやすい状態を作ります。
       </p>
 
+      <div class="hero-note">初月無料でお試し可能 / 導入サポートあり / 小規模事業者でも導入しやすい設計</div>
+
       <div class="button-row">
-        <a class="btn-primary" href="/pricing.html">料金を見る</a>
-       <a class="btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">無料で相談する</a>
+        <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">無料で相談する</a>
+        <a class="btn-secondary" href="/pricing.html">料金を見る</a>
       </div>
+
+      <div class="mini-points">
+        <div class="mini-point">営業時間外の受付</div>
+        <div class="mini-point">不在時の取りこぼし対策</div>
+        <div class="mini-point">受付内容を自動記録</div>
+        <div class="mini-point">あとで折り返ししやすい</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>こんな電話の取りこぼし、起きていませんか？</h2>
+      <p class="section-lead">
+        業種が違っても、電話対応で起きる損失には共通点があります。
+      </p>
+
+      <ul class="pain-list">
+        <li class="pain-item">
+          <strong>接客中・作業中・移動中で電話に出られない</strong>
+          目の前の対応を優先しているうちに着信を逃し、そのまま折り返しが遅れてしまう。
+        </li>
+        <li class="pain-item">
+          <strong>営業時間外の問い合わせ内容が分からない</strong>
+          着信履歴だけでは、誰から何の連絡だったのか把握できない。
+        </li>
+        <li class="pain-item">
+          <strong>折り返し時に必要な情報が足りない</strong>
+          会社名、名前、要件、緊急度が分からず、対応に無駄が出てしまう。
+        </li>
+        <li class="pain-item">
+          <strong>少人数運営で電話受付まで手が回らない</strong>
+          受付担当を置くほどではないが、このままでは機会損失が大きい。
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>その電話、AIが代わりに一次受付します</h2>
+      <p class="section-lead">
+        HOPESは、単なる自動音声ではなく、あとで人が対応しやすい形で情報を残すことを重視したAI電話受付サービスです。
+      </p>
 
       <div class="grid">
         <div class="card">
-          <h3>営業時間外の受付</h3>
-          <div class="muted">夜間や休日の電話取りこぼしを減らします。</div>
+          <h3>必要な情報を整理して聞き取る</h3>
+          <div class="muted">
+            氏名・電話番号・会社名・用件・折り返し希望など、あとで対応するために必要な内容を整理して受付します。
+          </div>
         </div>
         <div class="card">
-          <h3>受付内容を記録</h3>
-          <div class="muted">誰から何の用件だったかを整理して確認できます。</div>
+          <h3>受付内容を自動で記録</h3>
+          <div class="muted">
+            着信だけで終わらず、内容が残るので、誰にどう折り返すべきか判断しやすくなります。
+          </div>
         </div>
         <div class="card">
-          <h3>導入支援付き</h3>
-          <div class="muted">単なるツール提供ではなく、導入時の設定まで支援します。</div>
+          <h3>人を増やさず始めやすい</h3>
+          <div class="muted">
+            専任の受付担当を増やさなくても、電話対応の抜け漏れを減らす体制を作れます。
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <h2>概要</h2>
+      <h2>使い方はシンプルです</h2>
+      <p class="section-lead">
+        複雑な操作は不要です。電話に出られない時間の受付窓口を作るイメージで導入できます。
+      </p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>お客様が電話をかける</h3>
+          <p>営業時間外や不在時でも、電話を受ける窓口を維持できます。</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>AIが一次受付する</h3>
+          <p>用件に応じて必要な情報を順番に聞き取り、受付を進めます。</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>内容が記録される</h3>
+          <p>受付内容が整理された状態で残るため、あとから確認しやすくなります。</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>落ち着いたタイミングで対応</h3>
+          <p>折り返しが必要な相手や内容を見ながら、優先順位をつけて対応できます。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>導入後は、対応漏れを減らしやすくなります</h2>
+      <p class="section-lead">
+        着信が残るだけの状態から、対応しやすい情報が残る状態へ変わります。
+      </p>
+
+      <div class="compare">
+        <div class="compare-box before">
+          <h3>導入前</h3>
+          <ul>
+            <li>出られなかった着信だけが残る</li>
+            <li>誰から何の電話か分からない</li>
+            <li>折り返しの優先順位をつけにくい</li>
+            <li>社内共有が曖昧になりやすい</li>
+          </ul>
+        </div>
+        <div class="compare-box after">
+          <h3>導入後</h3>
+          <ul>
+            <li>受付内容が整理された状態で残る</li>
+            <li>誰に何の用件で折り返すべきか分かる</li>
+            <li>優先順位をつけて対応しやすい</li>
+            <li>あとから確認・共有しやすい</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>受付内容はダッシュボードで一元管理</h2>
+      <p class="section-lead">
+        AIが受け付けた内容を一覧で確認し、あとで確実に処理しやすい状態を作ります。
+      </p>
+
+      <div class="dashboard-box">
+        <h3>受付情報を見ながら、落ち着いて対応できる</h3>
+        <p>
+          着信履歴だけでは分からない内容を、あとから確認しやすい形で管理。
+          会社名、氏名、電話番号、用件、要約、対応状況などを見ながら折り返し対応できます。
+        </p>
+
+        <div class="dashboard-points">
+          <div class="dashboard-point">
+            <strong>受電一覧</strong>
+            誰からの電話だったかを一覧で把握しやすくします。
+          </div>
+          <div class="dashboard-point">
+            <strong>要件の整理</strong>
+            受付内容を見ながら、何の連絡だったか確認できます。
+          </div>
+          <div class="dashboard-point">
+            <strong>対応状況の管理</strong>
+            未対応・対応済みなどを整理し、抜け漏れを減らします。
+          </div>
+          <div class="dashboard-point">
+            <strong>あとから共有しやすい</strong>
+            自分だけでなく、社内でも内容を確認しやすくなります。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>さまざまな中小企業で活用しやすい設計です</h2>
+      <p class="section-lead">
+        特定の業種だけに限定せず、電話にすぐ出られない状況がある事業者全般を想定しています。
+      </p>
+
+      <div class="usecase-grid">
+        <div class="usecase-item">工業系・製造系</div>
+        <div class="usecase-item">清掃業</div>
+        <div class="usecase-item">美容室・サロン</div>
+        <div class="usecase-item">建設・設備</div>
+        <div class="usecase-item">小規模店舗</div>
+        <div class="usecase-item">各種サービス業</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>まずは初月無料でお試しください</h2>
+      <p class="section-lead">
+        実際の運用に近い形で試してから、継続をご判断いただけます。
+      </p>
+
+      <div class="pricing-box">
+        <h3>まずは相談・導入イメージの確認から</h3>
+        <p>
+          料金の詳細は別ページで確認できます。<br />
+          導入の流れや運用方法を含めて、無料でご相談いただけます。
+        </p>
+
+        <div class="button-row" style="justify-content:center;">
+          <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">無料で相談する</a>
+          <a class="btn-secondary" href="/pricing.html">料金を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>よくある質問</h2>
+      <ul class="faq-list">
+        <li class="faq-item">
+          <strong>どんな内容を受付できますか？</strong>
+          氏名、電話番号、会社名、用件、折り返し希望など、一次受付に必要な内容を想定しています。
+        </li>
+        <li class="faq-item">
+          <strong>営業時間外だけ使えますか？</strong>
+          はい。営業時間外のみの利用や、不在時・接客中・作業中の補助としての利用も想定しています。
+        </li>
+        <li class="faq-item">
+          <strong>導入は難しいですか？</strong>
+          できるだけ分かりやすく導入できるよう、設定や運用開始までサポートします。
+        </li>
+        <li class="faq-item">
+          <strong>まず試せますか？</strong>
+          初月無料でお試しいただけます。まずはご相談ください。
+        </li>
+      </ul>
+    </section>
+
+    <section class="cta">
+      <h2>電話の取りこぼしを、放置しない体制へ</h2>
+      <p>
+        HOPESは、電話にすぐ出られない中小企業のためのAI電話受付サービスです。
+        業種を問わず、受付内容を残し、あとで対応しやすい状態を作ります。
+      </p>
+
+      <div class="button-row">
+        <a class="btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSebCD_eWFDDIU5I5dhU_rU7b0zMtNDyPprz3xZIHhcWnJkACQ/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">無料で相談する</a>
+        <a class="btn-secondary" href="/pricing.html">料金を見る</a>
+      </div>
+    </section>
+
+    <section class="section company-info">
+      <h2>運営情報</h2>
       <p><strong>名称：</strong>HOPES</p>
       <p><strong>代表者：</strong>岩永竜生</p>
       <p><strong>所在地：</strong>福岡県北九州市</p>
       <p><strong>事業内容：</strong>AI電話受付システム及び自動応答システムの企画、開発、販売、運営及び保守</p>
     </section>
 
-    <section class="section">
-      <h2>電子公告</h2>
-      <p class="muted">本ページに公告を掲載します。</p>
-    </section>
+    <footer>
+      © HOPES
+    </footer>
   </div>
 </body>
 </html>
